@@ -18,5 +18,5 @@
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:src="@drawable/splash" />
-
+<-- bums />
 </RelativeLayout>
