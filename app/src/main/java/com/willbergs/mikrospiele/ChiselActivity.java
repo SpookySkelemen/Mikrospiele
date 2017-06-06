@@ -1,11 +1,14 @@
 package com.willbergs.mikrospiele;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 
 import static com.willbergs.mikrospiele.R.id.btnChisel;
+import static com.willbergs.mikrospiele.R.id.imgTimer;
 
 public class ChiselActivity extends Activity {
 
@@ -15,6 +18,26 @@ public class ChiselActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chisel);
+        final ImageView timer = (ImageView) (findViewById(imgTimer));
+        Thread myThread = new Thread() {
+            @Override
+            public void run() {
+                try {
+                    sleep(1000);
+                    timer.setImageResource(R.drawable.timer4);
+                    sleep(1000);
+                    timer.setImageResource(R.drawable.timer3);
+                    sleep(1000);
+                    timer.setImageResource(R.drawable.timer2);
+                    sleep(1000);
+                    timer.setImageResource(R.drawable.timer1);
+                    end();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        };
+        myThread.start();
     }
 
 
@@ -52,5 +75,14 @@ public class ChiselActivity extends Activity {
             chiselBtn.setImageResource(R.drawable.chisel9);
             progress++;
         }
+    }
+
+
+    private void end (){
+        if (progress < 7){
+            TransitionActivity.lives = TransitionActivity.lives - 1;
+        }
+        Intent myIntent = new Intent(getApplicationContext(),TransitionActivity.class);
+        startActivity(myIntent);
     }
 }

@@ -5,6 +5,8 @@ import android.os.Bundle;
 
 public class TransitionActivity extends Activity {
 
+    public static int lives;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
