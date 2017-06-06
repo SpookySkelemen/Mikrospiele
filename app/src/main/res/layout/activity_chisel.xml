@@ -14,17 +14,17 @@
         android:id="@+id/btnChisel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
         android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
         android:background="@null"
-        android:src="@drawable/chisel1"
-        android:onClick="chisel"/>
+        android:onClick="chisel"
+        android:src="@drawable/chisel1" />
 
     <ImageView
         android:id="@+id/imgTimer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
-        android:src="@drawable/timer5"/>
+        android:layout_alignParentTop="true"
+        android:src="@drawable/timer5" />
 </RelativeLayout>

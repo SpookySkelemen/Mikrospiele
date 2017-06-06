@@ -41,48 +41,41 @@ public class ChiselActivity extends Activity {
     }
 
 
-    public void chisel (View view){
+    public void chisel(View view) {
         ImageButton chiselBtn = (ImageButton) (findViewById(btnChisel));
-        if (progress == 0){
+        if (progress == 0) {
             chiselBtn.setImageResource(R.drawable.chisel2);
             progress++;
-        }
-        else if (progress == 1){
+        } else if (progress == 1) {
             chiselBtn.setImageResource(R.drawable.chisel3);
             progress++;
-        }
-        else if (progress == 2){
+        } else if (progress == 2) {
             chiselBtn.setImageResource(R.drawable.chisel4);
             progress++;
-        }
-        else if (progress == 3){
+        } else if (progress == 3) {
             chiselBtn.setImageResource(R.drawable.chisel5);
             progress++;
-        }
-        else if (progress == 4){
+        } else if (progress == 4) {
             chiselBtn.setImageResource(R.drawable.chisel6);
             progress++;
-        }
-        else if (progress == 5){
+        } else if (progress == 5) {
             chiselBtn.setImageResource(R.drawable.chisel7);
             progress++;
-        }
-        else if (progress == 6){
+        } else if (progress == 6) {
             chiselBtn.setImageResource(R.drawable.chisel8);
             progress++;
-        }
-        else{
+        } else {
             chiselBtn.setImageResource(R.drawable.chisel9);
             progress++;
         }
     }
 
 
-    private void end (){
-        if (progress < 7){
+    private void end() {
+        if (progress < 7) {
             TransitionActivity.lives = TransitionActivity.lives - 1;
         }
-        Intent myIntent = new Intent(getApplicationContext(),TransitionActivity.class);
+        Intent myIntent = new Intent(getApplicationContext(), TransitionActivity.class);
         startActivity(myIntent);
     }
 }

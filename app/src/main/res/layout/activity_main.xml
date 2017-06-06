@@ -40,6 +40,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:background="@drawable/btn_background"
+            android:onClick="toBegin"
             android:src="@drawable/beginbtn" />
 
         <ImageButton
@@ -48,8 +49,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:background="@drawable/btn_background"
-            android:src="@drawable/helpbtn"
-            android:onClick="toHelpScreen"/>
+            android:onClick="toHelpScreen"
+            android:src="@drawable/helpbtn" />
 
         <ImageButton
             android:id="@+id/btnHighScores"
