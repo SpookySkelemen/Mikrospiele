@@ -13,12 +13,12 @@ import static com.willbergs.mikrospiele.R.id.imgTimer;
 public class ChiselActivity extends Activity {
 
     private int progress = 0;
+    private final ImageView timer = (ImageView) (findViewById(imgTimer));
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chisel);
-        final ImageView timer = (ImageView) (findViewById(imgTimer));
         Thread myThread = new Thread() {
             @Override
             public void run() {

@@ -4,9 +4,6 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.widget.ImageView;
 
-import static com.willbergs.mikrospiele.R.id.imgHeart1;
-import static com.willbergs.mikrospiele.R.id.imgHeart2;
-import static com.willbergs.mikrospiele.R.id.imgHeart3;
 import static java.lang.Thread.sleep;
 
 public class TransitionActivity extends Activity {
@@ -22,9 +19,9 @@ public class TransitionActivity extends Activity {
 
 
     public void transition (){
-        ImageView heart1 = (ImageView) findViewById(imgHeart1);
-        ImageView heart2 = (ImageView) findViewById(imgHeart2);
-        ImageView heart3 = (ImageView) findViewById(imgHeart3);
+        ImageView heart1 = (ImageView) findViewById(R.id.imgHeart1);
+        ImageView heart2 = (ImageView) findViewById(R.id.imgHeart2);
+        ImageView heart3 = (ImageView) findViewById(R.id.imgHeart3);
 
         for (int x = 0 ; x < 4 ; x++){
             try {
