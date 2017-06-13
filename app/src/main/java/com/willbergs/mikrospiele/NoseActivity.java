@@ -70,6 +70,7 @@ public class NoseActivity extends Activity {
             }
             if (xPos <= 46 && xPos >= 50){                  // on a success
                 nose.setImageResource(R.drawable.nose2);    // change the nose graphic
+                arm.setImageResource(R.drawable.arm2);      // change the arm graphic
             }
             else{                                           // on a failure
                 nose.setImageResource(R.drawable.nose3);    // change the nose graphic

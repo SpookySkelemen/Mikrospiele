@@ -126,7 +126,7 @@ public class TransitionActivity extends Activity {
 
 
     public void end () {
-        Intent myIntent = new Intent(getApplicationContext(), GameOverActivity.class);  // will be changed if they succeed at a game
+        Intent myIntent = new Intent(getApplicationContext(), GameOverActivity.class);  // will be changed if they still have at least one life
 
         if (lives > 0){ // to move onto a game
             int rand = (int) (Math.random () * (5 - 1 + 1) + 1);
@@ -143,7 +143,7 @@ public class TransitionActivity extends Activity {
             }
         }
 
-        startActivity(myIntent);
+        startActivity(myIntent);    // go to next screen
         finish();
     } // end method
 } // TransitionActivity class
