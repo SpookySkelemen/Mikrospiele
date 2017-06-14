@@ -89,7 +89,7 @@ public class NoseActivity extends Activity {
 
 
     protected void pick (){         // btnPick onClick method
-        noseThread.destroy();       // stop the nose moving side to side
+        noseThread.interrupt();     // stop the nose moving side to side
         armThread.start();          // start the arm animation
         pickBtn.setEnabled(false);  // disable the button
 

@@ -43,6 +43,10 @@
             android:onClick="toBegin"
             android:src="@drawable/beginbtn" />
 
+        <Space
+            android:layout_width="@dimen/activity_vertical_margin"
+            android:layout_height="@dimen/activity_vertical_margin" />
+
         <ImageButton
             android:id="@+id/btnHelp"
             android:layout_width="wrap_content"
@@ -51,6 +55,10 @@
             android:background="@drawable/btn_background"
             android:onClick="toHelpScreen"
             android:src="@drawable/helpbtn" />
+
+        <Space
+            android:layout_width="@dimen/activity_vertical_margin"
+            android:layout_height="@dimen/activity_vertical_margin" />
 
         <ImageButton
             android:id="@+id/btnHighScores"

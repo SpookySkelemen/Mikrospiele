@@ -20,7 +20,8 @@
         <activity android:name=".TransitionActivity" />
         <activity android:name=".ChiselActivity" />
         <activity android:name=".NoseActivity" />
-        <activity android:name=".GameOverActivity"></activity>
+        <activity android:name=".GameOverActivity" />
+        <activity android:name=".DuelActivity"></activity>
     </application>
 
 </manifest>
