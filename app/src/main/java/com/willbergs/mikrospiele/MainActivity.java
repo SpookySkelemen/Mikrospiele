@@ -14,14 +14,16 @@ public class MainActivity extends Activity {
     }
 
 
-    public void toHelpScreen(View view) {
-        Intent helpIntent = new Intent(this, HelpActivity.class);
+    public void toHelpScreen (View view) {
+        Intent helpIntent = new Intent(getApplicationContext(), HelpActivity.class);
         startActivity(helpIntent);
+        finish();
     }
 
 
-    public void toBegin(View view) {
-        Intent transitionIntent = new Intent(this, TransitionActivity.class);
+    public void toBegin (View view) {
+        Intent transitionIntent = new Intent(getApplicationContext(), TransitionActivity.class);
         startActivity(transitionIntent);
+        finish();
     }
 }

@@ -1,8 +1,11 @@
 package com.willbergs.mikrospiele;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ImageView;
+
+import static android.os.SystemClock.sleep;
 
 public class DuelActivity extends Activity {
 
@@ -11,14 +14,17 @@ public class DuelActivity extends Activity {
     private boolean success = false;                                        // to check if the button press is valid
     private ImageView arm = (ImageView) (findViewById(R.id.imgDuelArm));    // the arm graphic
     private ImageView enemy = (ImageView) (findViewById(R.id.imgDuelist));  // the enemy graphic
+    private ImageView message = (ImageView) (findViewById(R.id.imgDraw));   // the graphic to tell the player when to tap
     private Thread timerThread = new Thread() {
         @Override
         public void run() {
             try {
                 sleep(rand);
                 success = true;
+                message.setImageResource(R.drawable.duel_draw);
                 sleep(react);
                 fail(true);
+                message.setImageResource(Integer.parseInt(null));
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -36,6 +42,7 @@ public class DuelActivity extends Activity {
 
     protected void draw (){
         if (success == true) {
+            arm.setImageResource(R.drawable.duel_arm);
             enemy.setImageResource(R.drawable.duelist2);
         } else {
             fail(false);
@@ -51,6 +58,18 @@ public class DuelActivity extends Activity {
 
         if (timeOut == true){
             enemy.setImageResource(R.drawable.duelist3);
+        } else {
+            enemy.setImageResource(R.drawable.duelist4);
         }
+
+        TransitionActivity.lives = TransitionActivity.lives - 1;
+        sleep(500);
+        Intent myIntent = new Intent (getApplicationContext(), TransitionActivity.class);
+    }
+
+    protected void end () {
+        Intent myIntent = new Intent (getApplicationContext(), TransitionActivity.class);
+        startActivity(myIntent);
+        finish();
     }
 }
