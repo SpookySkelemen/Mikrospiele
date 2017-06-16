@@ -7,42 +7,49 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 
-import static com.willbergs.mikrospiele.R.id.btnChisel;
-import static com.willbergs.mikrospiele.R.id.imgTimer;
-
 public class ChiselActivity extends Activity {
 
-    private int progress = 0;
-    private final ImageView timer = (ImageView) (findViewById(imgTimer));
+
+    protected int progress;
+    protected ImageView timer;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chisel);
+
+        progress = 0;
+        timer = (ImageView) (findViewById(R.id.imgTimer));
         Thread myThread = new Thread() {
             @Override
             public void run() {
-                try {
-                    sleep(1000);
-                    timer.setImageResource(R.drawable.timer4);
-                    sleep(1000);
-                    timer.setImageResource(R.drawable.timer3);
-                    sleep(1000);
-                    timer.setImageResource(R.drawable.timer2);
-                    sleep(1000);
-                    timer.setImageResource(R.drawable.timer1);
-                    end();
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        try {
+                            sleep(1000);
+                            timer.setImageResource(R.drawable.timer4);
+                            sleep(1000);
+                            timer.setImageResource(R.drawable.timer3);
+                            sleep(1000);
+                            timer.setImageResource(R.drawable.timer2);
+                            sleep(1000);
+                            timer.setImageResource(R.drawable.timer1);
+                            end();
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                });
             }
-        };
+            };
         myThread.start();
     }
 
 
     public void chisel(View view) {
-        ImageButton chiselBtn = (ImageButton) (findViewById(btnChisel));
+        ImageButton chiselBtn = (ImageButton) (findViewById(R.id.btnChisel));
         if (progress == 0) {
             chiselBtn.setImageResource(R.drawable.chisel2);
             progress++;
