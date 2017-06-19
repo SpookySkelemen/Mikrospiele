@@ -26,4 +26,11 @@ public class MainActivity extends Activity {
         startActivity(transitionIntent);
         finish();
     }
+
+
+    public void toAbout (View view) {
+        Intent aboutIntent = new Intent (getApplicationContext(), AboutActivity.class);
+        startActivity(aboutIntent);
+        finish();
+    }
 }

@@ -6,9 +6,11 @@ import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.TextView;
+
+import static android.view.View.GONE;
 
 public class ChiselActivity extends Activity {
 
@@ -16,8 +18,6 @@ public class ChiselActivity extends Activity {
     protected int progress;
     protected ViewGroup mainScrn;
     protected CountDownTimer timer;
-    public int score;
-    protected TextView scoreTxt;
     protected int time;
     protected ImageView timerImg;
 
@@ -30,7 +30,6 @@ public class ChiselActivity extends Activity {
         mainScrn = (ViewGroup) (findViewById(R.id.activity_chisel));
         time = 5;
         timerImg = (ImageView) (findViewById(R.id.imgTimer));
-        scoreTxt = (TextView) (findViewById(R.id.txtScore));
         timer = new CountDownTimer(5000, 1000) {
             @Override
             public void onTick(long millisUntilFinished) {
@@ -44,11 +43,17 @@ public class ChiselActivity extends Activity {
                 end();
             }
         };
+        ImageButton chiselBtn = (ImageButton) (findViewById(R.id.btnChisel));
+        chiselBtn.setEnabled(false);
     }
 
 
-    public void start (){
+    public void start (View view){
         timer.start();
+        ImageButton chiselBtn = (ImageButton) (findViewById(R.id.btnChisel));
+        chiselBtn.setEnabled(true);
+        Button startBtn = (Button) (findViewById(R.id.btnStart));
+        startBtn.setVisibility(GONE);
     }
 
 
@@ -75,7 +80,6 @@ public class ChiselActivity extends Activity {
         if (progress == 0) {
             chiselBtn.setImageResource(R.drawable.chisel2);
             progress++;
-            start();
         } else if (progress == 1) {
             chiselBtn.setImageResource(R.drawable.chisel3);
             progress++;
@@ -94,32 +98,22 @@ public class ChiselActivity extends Activity {
         } else if (progress == 6) {
             chiselBtn.setImageResource(R.drawable.chisel8);
             progress++;
-        } else if (progress == 7){
+        } else if (progress == 7) {
             chiselBtn.setImageResource(R.drawable.chisel9);
             progress++;
-        } else {
-            chiselBtn.setImageResource(R.drawable.chisel1);
-            progress = 0;
         }
-
-        onClick();
     }
 
 
     private void end() {
-        if (score < 7) {
-            TransitionActivity.lives = TransitionActivity.lives - 1;
+        if (progress < 7) {
+            TransitionActivity.lives--;
+        } else {
+            TransitionActivity.score++;
         }
 
         Intent myIntent = new Intent(getApplicationContext(), TransitionActivity.class);
         startActivity(myIntent);
         finish();
-    }
-
-
-    public void onClick (){
-        score++;
-        String text = "Score:" + score;
-        scoreTxt.setText (text);
     }
 }

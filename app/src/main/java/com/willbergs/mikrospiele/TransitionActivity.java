@@ -39,7 +39,7 @@ public class TransitionActivity extends Activity {
     } // onCreate method
 
     public static int lives;
-
+    public static int score;
 
     public void animate (){
         if (lives == 3){

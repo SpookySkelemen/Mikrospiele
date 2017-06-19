@@ -61,11 +61,11 @@
             android:layout_height="@dimen/activity_vertical_margin" />
 
         <ImageButton
-            android:id="@+id/btnHighScores"
+            android:id="@+id/btnAbout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:background="@drawable/btn_background"
-            android:src="@drawable/highscorebtn" />
+            android:src="@drawable/aboutbtn" />
     </LinearLayout>
 </RelativeLayout>

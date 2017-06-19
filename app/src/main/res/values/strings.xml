@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">Mikrospiele</string>
-    <string name="help_text"></string>
+    <string name="help_text">Microspiele is a microgame game that all have simple controls. Tapping the screen controls everything. When a microgame begins, press the start button to begin the microgame.</string>
+    <string name="start_text">Begin</string>
+    <string name="back_text">Back</string>
+    <string name="about_text">The programmer and designer for Mikrospiele is Michael Willburger. Michael is from Southwestern Ontario, and has a great interest in programming.</string>
 </resources>
