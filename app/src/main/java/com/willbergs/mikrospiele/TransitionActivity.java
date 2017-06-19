@@ -23,7 +23,7 @@ public class TransitionActivity extends Activity {
         heart2 = (ImageView) findViewById(R.id.imgHeart2);
         heart3 = (ImageView) findViewById(R.id.imgHeart3);
 
-        CountDownTimer transition = new CountDownTimer(3000, 25) {
+        CountDownTimer transition = new CountDownTimer(4000, 25) {
             @Override
             public void onTick(long millisUntilFinished) {
                 animate();

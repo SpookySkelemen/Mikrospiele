@@ -119,6 +119,7 @@ public class ChiselActivity extends Activity {
 
     public void onClick (){
         score++;
-        scoreTxt.setText ("Score: " + score);
+        String text = "Score:" + score;
+        scoreTxt.setText (text);
     }
 }
