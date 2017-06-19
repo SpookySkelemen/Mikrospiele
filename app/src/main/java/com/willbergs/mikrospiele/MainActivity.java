@@ -22,7 +22,7 @@ public class MainActivity extends Activity {
 
 
     public void toBegin (View view) {
-        Intent transitionIntent = new Intent(getApplicationContext(), ChiselActivity.class);
+        Intent transitionIntent = new Intent(getApplicationContext(), TransitionActivity.class);
         startActivity(transitionIntent);
         finish();
     }

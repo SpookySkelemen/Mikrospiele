@@ -29,10 +29,10 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_below="@id/title"
         android:orientation="vertical"
-        android:paddingTop="@dimen/activity_title_padding">
+        android:paddingTop="@dimen/activity_title_padding"
+        android:layout_below="@+id/title"
+        android:layout_alignParentStart="true">
 
         <ImageButton
             android:id="@+id/btnBegin"
