@@ -7,7 +7,7 @@ import android.os.CountDownTimer;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
-import android.widget.TextView;
+import android.widget.ImageView;
 
 public class ChiselActivity extends Activity {
 
@@ -17,8 +17,9 @@ public class ChiselActivity extends Activity {
     protected Thread myThread;
     protected ViewGroup mainScrn;
     protected CountDownTimer timer;
-    protected TextView timerTxt;
+    protected int score;
     protected int time;
+    protected ImageView timerImg;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,11 +59,20 @@ public class ChiselActivity extends Activity {
         // mainScrn = (ViewGroup) (findViewById(R.id.activity_chisel));
 
         time = 5;
-        timerTxt = (TextView) (findViewById(R.id.txtTimer));
+        timerImg = (ImageView) (findViewById(R.id.imgTimer));
         timer = new CountDownTimer(5000, 1000) {
             @Override
             public void onTick(long l) {
                 time--;
+                if (time == 4){
+                    timerImg.setImageResource(R.drawable.timer4);
+                } else if (time == 3){
+                    timerImg.setImageResource(R.drawable.timer3);
+                } else if (time == 2){
+                    timerImg.setImageResource(R.drawable.timer2);
+                } else{
+                    timerImg.setImageResource(R.drawable.timer1);
+                }
             }
 
             @Override
@@ -107,6 +117,8 @@ public class ChiselActivity extends Activity {
             chiselBtn.setImageResource(R.drawable.chisel9);
             progress++;
         }
+
+        onClick();
     }
 
 
@@ -118,5 +130,10 @@ public class ChiselActivity extends Activity {
         Intent myIntent = new Intent(getApplicationContext(), MainActivity.class);
         startActivity(myIntent);
         finish();
+    }
+
+
+    public void onClick (){
+        score++;
     }
 }
