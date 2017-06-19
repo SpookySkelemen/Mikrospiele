@@ -31,5 +31,6 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/txtAbout"
         android:text="@string/back_text"
-        android:textSize="@dimen/activity_text_size" />
+        android:textSize="@dimen/activity_text_size"
+        android:onClick="toMainActivity"/>
 </RelativeLayout>

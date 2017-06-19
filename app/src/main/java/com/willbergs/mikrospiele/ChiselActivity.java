@@ -106,7 +106,7 @@ public class ChiselActivity extends Activity {
 
 
     private void end() {
-        if (progress < 7) {
+        if (progress < 8) {
             TransitionActivity.lives--;
         } else {
             TransitionActivity.score++;
