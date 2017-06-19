@@ -14,13 +14,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:src="@drawable/gameover"/>
+        android:src="@drawable/gameover" />
 
     <TextView
         android:id="@+id/txtFinalScore"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:textSize="@dimen/activity_text_size"
-        android:text=""/>
+        android:text=""
+        android:textSize="@dimen/activity_text_size" />
 </RelativeLayout>
