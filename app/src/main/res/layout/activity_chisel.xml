@@ -20,11 +20,11 @@
         android:onClick="chisel"
         android:src="@drawable/chisel1" />
 
-    <ImageView
-        android:id="@+id/imgTimer"
+    <TextView
+        android:id="@+id/txtTimer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
         android:layout_alignParentRight="true"
-        android:layout_alignParentTop="true"
-        android:src="@drawable/timer5" />
+        android:text="5"/>
 </RelativeLayout>
