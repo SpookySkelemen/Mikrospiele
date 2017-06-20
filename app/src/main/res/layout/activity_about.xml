@@ -15,6 +15,7 @@
         android:id="@+id/imgPicture"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
         android:src="@drawable/picture" />
 
     <TextView
@@ -23,6 +24,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/imgPicture"
         android:gravity="center"
+        android:paddingTop="@dimen/activity_title_padding"
         android:text="@string/about_text"
         android:textColor="@color/colorAccent"
         android:textSize="@dimen/activity_small_text" />
