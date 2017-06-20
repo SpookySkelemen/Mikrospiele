@@ -11,6 +11,6 @@ public class GameOverActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game_over);
         TextView finalScore = (TextView) findViewById(R.id.txtFinalScore);
-        finalScore.setText ("Your final score was " + TransitionActivity.score + "!");
+        finalScore.setText("Your final score was " + TransitionActivity.score + "!");
     }
 }

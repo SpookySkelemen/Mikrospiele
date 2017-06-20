@@ -114,19 +114,15 @@ public class NoseActivity extends Activity {
     }
 
 
-
-
-
-    protected void pick (){         // btnPick onClick method
+    protected void pick() {         // btnPick onClick method
         noseThread.interrupt();     // stop the nose moving side to side
         armThread.start();          // start the arm animation
         pickBtn.setEnabled(false);  // disable the button
 
         // determine whether the player wins or loses
-        if (xPos <= 46 && xPos >= 50){
+        if (xPos <= 46 && xPos >= 50) {
             winState = true;
-        }
-        else{
+        } else {
             winState = false;
         }
     }

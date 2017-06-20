@@ -11,28 +11,29 @@ public class TransitionActivity extends Activity {
     protected ImageView heart1;
     protected ImageView heart2;
     protected ImageView heart3;
-    protected int progress;
+    protected int frame;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_transition);
 
-        progress = 0;
+        frame = 0;  // the current animation frame
+        // the ImageViews that will be animated.
         heart1 = (ImageView) findViewById(R.id.imgHeart1);
         heart2 = (ImageView) findViewById(R.id.imgHeart2);
         heart3 = (ImageView) findViewById(R.id.imgHeart3);
 
-        CountDownTimer transition = new CountDownTimer(4000, 25) {
+        CountDownTimer transition = new CountDownTimer(4000, 25) {  // 25 frames per second
             @Override
             public void onTick(long millisUntilFinished) {
                 animate();
-            }
+            }   // to animate the hearts beating.
 
             @Override
             public void onFinish() {
                 end();
-            }
+            }   // leaves this activity and moves to another one.
         };
 
         transition.start();
@@ -41,95 +42,96 @@ public class TransitionActivity extends Activity {
     public static int lives;
     public static int score;
 
-    public void animate (){
-        if (lives == 3){
-            if (progress == 0){
+    // animates the hearts beating in time with the timer
+    public void animate() {
+        if (lives == 3) {           // all three hearts will animate
+            if (frame == 0) {
                 heart1.setImageResource(R.drawable.heart_2);
                 heart2.setImageResource(R.drawable.heart_2);
                 heart3.setImageResource(R.drawable.heart_2);
-                progress++;
-            } else if (progress == 1) {
+                frame++;
+            } else if (frame == 1) {
                 heart1.setImageResource(R.drawable.heart_3);
                 heart2.setImageResource(R.drawable.heart_3);
                 heart3.setImageResource(R.drawable.heart_3);
-                progress++;
-            } else if (progress == 2) {
+                frame++;
+            } else if (frame == 2) {
                 heart1.setImageResource(R.drawable.heart_4);
                 heart2.setImageResource(R.drawable.heart_4);
                 heart3.setImageResource(R.drawable.heart_4);
-                progress++;
-            } else if (progress == 3) {
+                frame++;
+            } else if (frame == 3) {
                 heart1.setImageResource(R.drawable.heart_5);
                 heart2.setImageResource(R.drawable.heart_5);
                 heart3.setImageResource(R.drawable.heart_5);
-                progress++;
-            } else if (progress == 4) {
+                frame++;
+            } else if (frame == 4) {
                 heart1.setImageResource(R.drawable.heart_6);
                 heart2.setImageResource(R.drawable.heart_6);
                 heart3.setImageResource(R.drawable.heart_6);
-                progress++;
-            } else if (progress > 4 && progress < 40){
+                frame++;
+            } else if (frame > 4 && frame < 40) {
                 heart1.setImageResource(R.drawable.heart_1);
                 heart2.setImageResource(R.drawable.heart_1);
                 heart3.setImageResource(R.drawable.heart_1);
-                progress++;
+                frame++;
             } else {
-                progress = 0;
+                frame = 0;
             }
-        } else if (lives == 2){
-            if (progress == 0){
+        } else if (lives == 2) {    // two hearts will animate
+            if (frame == 0) {
                 heart1.setImageResource(R.drawable.heart_2);
                 heart2.setImageResource(R.drawable.heart_2);
                 heart3.setImageResource(R.drawable.heart_broken);
-                progress++;
-            } else if (progress == 1) {
+                frame++;
+            } else if (frame == 1) {
                 heart1.setImageResource(R.drawable.heart_3);
                 heart2.setImageResource(R.drawable.heart_3);
-                progress++;
-            } else if (progress == 2) {
+                frame++;
+            } else if (frame == 2) {
                 heart1.setImageResource(R.drawable.heart_4);
                 heart2.setImageResource(R.drawable.heart_4);
-                progress++;
-            } else if (progress == 3) {
+                frame++;
+            } else if (frame == 3) {
                 heart1.setImageResource(R.drawable.heart_5);
                 heart2.setImageResource(R.drawable.heart_5);
-                progress++;
-            } else if (progress == 4) {
+                frame++;
+            } else if (frame == 4) {
                 heart1.setImageResource(R.drawable.heart_6);
                 heart2.setImageResource(R.drawable.heart_6);
-                progress++;
-            } else if (progress > 4 && progress < 40){
+                frame++;
+            } else if (frame > 4 && frame < 40) {
                 heart1.setImageResource(R.drawable.heart_1);
                 heart2.setImageResource(R.drawable.heart_1);
-                progress++;
+                frame++;
             } else {
-                progress = 0;
+                frame = 0;
             }
-        } else if (lives == 1) {
-            if (progress == 0){
+        } else if (lives == 1) {    // one heart will animate
+            if (frame == 0) {
                 heart1.setImageResource(R.drawable.heart_2);
                 heart2.setImageResource(R.drawable.heart_broken);
                 heart3.setImageResource(R.drawable.heart_broken);
-                progress++;
-            } else if (progress == 1) {
+                frame++;
+            } else if (frame == 1) {
                 heart1.setImageResource(R.drawable.heart_3);
-                progress++;
-            } else if (progress == 2) {
+                frame++;
+            } else if (frame == 2) {
                 heart1.setImageResource(R.drawable.heart_4);
-                progress++;
-            } else if (progress == 3) {
+                frame++;
+            } else if (frame == 3) {
                 heart1.setImageResource(R.drawable.heart_5);
-                progress++;
-            } else if (progress == 4) {
+                frame++;
+            } else if (frame == 4) {
                 heart1.setImageResource(R.drawable.heart_6);
-                progress++;
-            } else if (progress > 4 && progress < 40){
+                frame++;
+            } else if (frame > 4 && frame < 40) {
                 heart1.setImageResource(R.drawable.heart_1);
-                progress++;
+                frame++;
             } else {
-                progress = 0;
+                frame = 0;
             }
-        } else {
+        } else {                    // none of them will animate
             heart1.setImageResource(R.drawable.heart_broken);
             heart2.setImageResource(R.drawable.heart_broken);
             heart3.setImageResource(R.drawable.heart_broken);
@@ -137,25 +139,23 @@ public class TransitionActivity extends Activity {
     }
 
 
-    public void end () {
+    public void end() {
         Intent myIntent = new Intent(getApplicationContext(), GameOverActivity.class);  // will be changed if they still have at least one life
 
-        if (lives > 0){ // to move onto a game
-            int rand = (int) (Math.random () * (5 - 1 + 1) + 1);
+        if (lives > 0) { // to move onto a game
+            // int rand = (int) (Math.random() * (3 - 1 + 1) + 1);  // if all of the games were working this would be on
+            int rand = 1;   // rand is not random
             if (rand == 1) {
-                myIntent = new Intent (getApplicationContext(), ChiselActivity.class);
+                myIntent = new Intent(getApplicationContext(), ChiselActivity.class);
             } else if (rand == 2) {
-                myIntent = new Intent (getApplicationContext(), ChiselActivity.class);
+                myIntent = new Intent(getApplicationContext(), DuelActivity.class);
             } else if (rand == 3) {
-                myIntent = new Intent (getApplicationContext(), ChiselActivity.class);
-            } else if (rand == 4) {
-                myIntent = new Intent (getApplicationContext(), ChiselActivity.class);
-            } else if (rand == 5) {
-                myIntent = new Intent (getApplicationContext(), ChiselActivity.class);
+                myIntent = new Intent(getApplicationContext(), NoseActivity.class);
             }
         }
 
-        startActivity(myIntent);    // go to next screen
+        // leave this screen and move on to the next
+        startActivity(myIntent);
         finish();
     } // end method
 } // TransitionActivity class

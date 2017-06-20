@@ -53,8 +53,7 @@ public class DuelActivity extends Activity {
     }
 
 
-
-    protected void draw (View view){
+    protected void draw(View view) {
         if (success == true) {
             arm.setImageResource(R.drawable.duel_arm);
             enemy.setImageResource(R.drawable.duelist2);
@@ -66,12 +65,12 @@ public class DuelActivity extends Activity {
     }
 
 
-    protected void fail (boolean timeOut){
+    protected void fail(boolean timeOut) {
         success = false;
 
         timerThread.interrupt();
 
-        if (timeOut == true){
+        if (timeOut == true) {
             enemy.setImageResource(R.drawable.duelist3);
         } else {
             enemy.setImageResource(R.drawable.duelist4);
@@ -81,8 +80,8 @@ public class DuelActivity extends Activity {
         end(null);
     }
 
-    protected void end (View view) {
-        Thread why =  new Thread() {
+    protected void end(View view) {
+        Thread why = new Thread() {
             @Override
             public void run() {
                 try {
@@ -91,7 +90,7 @@ public class DuelActivity extends Activity {
                     e.printStackTrace();
                 }
 
-                Intent myIntent = new Intent (getApplicationContext(), TransitionActivity.class);
+                Intent myIntent = new Intent(getApplicationContext(), TransitionActivity.class);
                 startActivity(myIntent);
                 finish();
             }

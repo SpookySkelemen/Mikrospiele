@@ -14,22 +14,22 @@ public class MainActivity extends Activity {
     }
 
 
-    public void toHelpScreen (View view) {
+    public void toHelpScreen(View view) {
         Intent helpIntent = new Intent(getApplicationContext(), HelpActivity.class);
         startActivity(helpIntent);
         finish();
     }
 
 
-    public void toBegin (View view) {
+    public void toBegin(View view) {
         Intent transitionIntent = new Intent(getApplicationContext(), TransitionActivity.class);
         startActivity(transitionIntent);
         finish();
     }
 
 
-    public void toAbout (View view) {
-        Intent aboutIntent = new Intent (getApplicationContext(), AboutActivity.class);
+    public void toAbout(View view) {
+        Intent aboutIntent = new Intent(getApplicationContext(), AboutActivity.class);
         startActivity(aboutIntent);
         finish();
     }

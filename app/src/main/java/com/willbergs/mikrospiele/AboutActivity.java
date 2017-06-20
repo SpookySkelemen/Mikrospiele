@@ -13,8 +13,8 @@ public class AboutActivity extends AppCompatActivity {
         setContentView(R.layout.activity_about);
     }
 
-    public void toMainActivity (View view){
-        Intent intent = new Intent (getApplicationContext(), MainActivity.class);
+    public void toMainActivity(View view) {
+        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
         startActivity(intent);
         finish();
     }

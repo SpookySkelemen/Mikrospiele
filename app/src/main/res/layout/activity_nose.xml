@@ -12,11 +12,11 @@
 
     <ImageView
         android:id="@+id/imgTimer"
-        android:src="@drawable/timer5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_x="0dp"
-        android:layout_y="0dp"/>
+        android:layout_y="0dp"
+        android:src="@drawable/timer5" />
 
     <ImageView
         android:id="@+id/imgNose"
@@ -24,7 +24,7 @@
         android:layout_height="wrap_content"
         android:layout_x="0dp"
         android:layout_y="0dp"
-        android:src="@drawable/nose"/>
+        android:src="@drawable/nose" />
 
     <ImageView
         android:id="@+id/imgArm"
@@ -32,7 +32,7 @@
         android:layout_height="wrap_content"
         android:layout_x="48dp"
         android:layout_y="250dp"
-        android:src="@drawable/arm"/>
+        android:src="@drawable/arm" />
 
     <ImageButton
         android:id="@+id/btnPick"
@@ -41,6 +41,6 @@
         android:layout_x="0dp"
         android:layout_y="0dp"
         android:background="@null"
-        android:onClick="pick"/>
+        android:onClick="pick" />
 
 </AbsoluteLayout>
