@@ -30,6 +30,7 @@ public class ChiselActivity extends Activity {
         time = 5;       // starts at five
         timerImg = (ImageView) (findViewById(R.id.imgTimer));
         chiselBtn = (ImageButton) (findViewById(R.id.btnChisel));
+
         timer = new CountDownTimer(5000, 1000) {
             @Override
             public void onTick(long millisUntilFinished) {

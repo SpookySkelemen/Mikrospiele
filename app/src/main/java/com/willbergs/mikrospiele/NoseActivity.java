@@ -96,7 +96,8 @@ public class NoseActivity extends Activity {
                             } catch (InterruptedException e) {
                                 e.printStackTrace();
                             }
-                            yPos = yPos + 5;
+                            yPos = yPos - 5;
+                            arm.setY(yPos);
                         }
                         if (xPos <= 46 && xPos >= 50) {                  // on a success
                             nose.setImageResource(R.drawable.nose2);    // change the nose graphic
@@ -130,7 +131,10 @@ public class NoseActivity extends Activity {
 
     private void end() {            // when the timer ends
         if (winState == false) {    // if the player did not succeed
-            TransitionActivity.lives = TransitionActivity.lives - 1;
+            TransitionActivity.lives --;
+        }
+        else {
+            TransitionActivity.score++;
         }
         Intent myIntent = new Intent(getApplicationContext(), TransitionActivity.class);
         startActivity(myIntent);
